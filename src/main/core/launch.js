@@ -139,6 +139,17 @@ const setEvents = async (area, userSettings) => {
   }
   // Notice for the very first launch.
   const notice = dom.create(`<span>${res("needToPrepareDict")}</span>`);
+
+  const openOptionDiv = document.createElement("div")
+  const openOptionLink = document.createElement("a");
+  openOptionLink.addEventListener("click", () => {
+    chrome.runtime.sendMessage({type: "open_option_page"});
+  })
+  openOptionLink.textContent = "Option Page"
+  openOptionLink.style.textDecorationLine = "underline"
+  openOptionDiv.appendChild(openOptionLink);
+  notice.appendChild(openOptionDiv)
+
   dom.replace(area.content, notice);
   doUpdate = async () => {
     if (!(await config.isDataReady())) {

@@ -14,7 +14,7 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_icon": "icons/icon19.png",
+    "default_icon": "icons/icon16.png",
     "default_title": "Touch Dictionary"
   },
   "commands": {

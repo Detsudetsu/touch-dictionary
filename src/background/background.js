@@ -71,6 +71,9 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
       sendResponse(pdfData);
       break;
     }
+    case "open_option_page": {
+      chrome.runtime.openOptionsPage();
+    }
   }
 });
 
